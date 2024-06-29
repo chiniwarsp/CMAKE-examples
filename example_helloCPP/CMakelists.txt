@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.29)
+
+# Set the project name
+project(HelloWorld)
+
+# Create the build directory if it doesn't exist
+file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/build)
+
+# Create the bin directory if it doesn't exist
+file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
+
+# Specify the output directory for the executable
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/build)
+
+# Add the executable
+add_executable(hello src/main.cpp)
+
+# Specify the output directory for the executable
+set_target_properties(hello PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
+
